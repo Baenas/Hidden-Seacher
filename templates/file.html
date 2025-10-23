@@ -17,7 +17,7 @@
     <ul>
     {% for linea in lineas %}
        
-        <a href="{{ url_for('web', name=linea) }}"><ol>{{ linea }}</ol></a>
+        <a href="{{ url_for('webs', name=linea) }}"><ol>{{ linea }}</ol></a>
     {% endfor %}
     </ul>
 {% else %}

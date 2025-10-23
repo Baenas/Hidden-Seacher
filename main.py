@@ -33,13 +33,16 @@ def files():
     archivos = listar_txt('webs')
     return render_template('files.html', archivos=archivos)
 
-@app.route('/files/<nombre>')
-def ver_archivo(nombre):
-    lineas = leer_lineas('webs', nombre)
-    return render_template('file.html', archivo=nombre, lineas=lineas)
+@app.route('/file')
+def file():
+    Nombre = request.args.get('nombre')
+    lineas = leer_lineas('webs', Nombre)
+    print(Nombre, "aaaa")
+    return render_template('file.html', archivo=Nombre, lineas=lineas)
 
 @app.route('/web/<name>')
 def webs(name):
+    lineas = leer_lineas('webs', name)
     return render_template('website.html', name=name)
 
 def abrir_navegador():
@@ -47,4 +50,5 @@ def abrir_navegador():
 
 if __name__ == '__main__':
     threading.Timer(1.0, abrir_navegador).start()
-    app.run(debug=False)
+    app.run(host='0.0.0.0')
+

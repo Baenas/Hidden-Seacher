@@ -14,10 +14,10 @@
 </head>
 <body>
     <h1>📂 Archivos TXT en la carpeta</h1>
-    {% if archivos %}
+    {% if archivos %}   
         <ul>
             {% for archivo in archivos %}
-                <li><a href="{{ url_for('files', nombre=archivo) }}">{{ archivo }}</a></li>
+                <li><a href="{{ url_for('file', nombre=archivo) }}" >{{ archivo }}</a></li>
             {% endfor %}
         </ul>
     {% else %}
