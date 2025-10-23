@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ archivo }}</title>
+    <style> 
+        body { font-family: sans-serif; margin: 40px; background-color: #f7f7f7; }
+        h1 { color: #333; text-align: center; }
+        pre { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 0 4px rgba(0,0,0,0.1); white-space: pre-wrap; word-wrap: break-word; }
+        a { display: block; text-align: center; margin-top: 20px; color: #4CAF50; font-weight: bold; text-decoration: none; }
+        a:hover { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>📄 {{ archivo }}</h1>
+    {% if lineas %}
+    <ul>
+    {% for linea in lineas %}
+       
+        <a href="{{ url_for('web', name=linea) }}"><ol>{{ linea }}</ol></a>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay entradas en este archivo.</p>
+{% endif %}
+    <a href="{{ url_for('files') }}">⬅ Volver a la lista</a>
+</body>
+</html>

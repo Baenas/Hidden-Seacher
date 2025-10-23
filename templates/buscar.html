@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Entradas</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 40px;
+            background-color: #f7f7f7;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 30px;
+        }
+        input[type="text"] {
+            padding: 6px;
+            width: 300px;
+        }
+        button {
+            padding: 6px 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 8px 0;
+            background: white;
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>📜 Lista de Entradas</h1>
+
+    <h1>Buscar </h1>
+    <form method="POST" action="/buscar/add">
+        <input type="text" name="texto" placeholder="Escribe algo..." required style="width: 300px; padding: 5px;">
+        <button type="submit" style="padding: 5px 10px;">Buscar</button>
+    </form>
+    <p>{{ mensaje }}</p>
+
+</body>
+</html>
